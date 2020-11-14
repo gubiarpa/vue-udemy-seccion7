@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <h1
-      :style="[contador > 100 ? { 'color' : 'green' }: { 'color' : 'red' }]">
-      Mi contador {{ contador }}
+    <h1 :style="colorContador">Mi contador {{ contador }}
       </h1>
   </div>
 </template>
@@ -15,7 +13,10 @@ export default {
   components: {
   },
   computed: {
-    ...mapState(['contador'])
+    ...mapState(['contador']),
+    colorContador() {
+      return [this.contador > 100 ? { 'color' : 'green' }: { 'color' : 'red' }];
+    }
   }
 }
 </script>
