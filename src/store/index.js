@@ -5,6 +5,9 @@ export default createStore({
     contador: 30
   },
   mutations: {
+    incrementar(state) {
+      state.contador += 10;
+    }
   },
   actions: {
   },
