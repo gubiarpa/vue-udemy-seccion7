@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <h1>Mi contador {{ contador }}</h1>
+    <h1
+      :style="[contador > 100 ? { 'color' : 'green' }: { 'color' : 'red' }]">
+      Mi contador {{ contador }}
+      </h1>
   </div>
 </template>
 
