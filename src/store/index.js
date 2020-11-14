@@ -5,11 +5,14 @@ export default createStore({
     contador: 30
   },
   mutations: {
-    incrementar(state) {
+    _incrementar(state) {
       state.contador += 10;
     }
   },
   actions: {
+    incrementar({commit}) {
+      commit('_incrementar');
+    }
   },
   modules: {
   }
