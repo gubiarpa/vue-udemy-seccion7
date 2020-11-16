@@ -1,19 +1,21 @@
 <template>
   <div class="home">
-    <h1 :style="colorContador">Mi contador {{ contador }}</h1>
-    <button @click="incrementar">Aumentar 10</button>
-    <BtnDisminuir />
+    <h1 :style="colorContador">Mi contador: {{ contador }}</h1>
+    <BtnAction title="Aumentar 20" @click="incrementar(20)" />
+    <BtnAction title="Disminuir 10" @click="disminuir(10)" />
   </div>
 </template>
 
 <script>
-import BtnDisminuir from "../components/BtnDisminuir";
+// import BtnDisminuir from "../components/BtnDisminuir";
+import BtnAction from "../components/BtnAction";
 import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: 'Home',
   components: {
-    BtnDisminuir
+    // BtnDisminuir,
+    BtnAction,
   },
   computed: {
     ...mapState(['contador']),
